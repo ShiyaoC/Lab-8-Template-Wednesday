@@ -28,17 +28,6 @@ class CityListTest {
         assertEquals(2, cityList.countCities());
         assertTrue(cityList.hasCity(new City("Regina", "Saskatchewan")));
     }
-    @Test
-    void testAdd2() {
-        CityList cityList = mockCityList();
-
-        assertEquals(1, cityList.countCities());
-
-        cityList.add(new City("Regina", "Saskatchewan"));
-
-        assertEquals(3, cityList.countCities());
-        assertTrue(cityList.hasCity(new City("Calgary", "Alberta")));
-    }
 
     @Test
     void testAddException() {
@@ -103,5 +92,18 @@ class CityListTest {
         CityList cityList = mockCityList();
 
         assertEquals(1, cityList.countCities());
+    }
+//    public String  getFirstCityName() {
+//        City firstCity = cities.get(0);
+//        return firstCity.getCityName();
+//    }
+    @Test
+    void testGetFirstCityName() {
+        CityList cityList = mockCityList();
+        assertEquals(1, cityList.countCities());
+
+        cityList.add(new City("Regina", "Saskatchewan"));
+
+        assertEquals("Edmonton", cityList.getFirstCityName());
     }
 }
