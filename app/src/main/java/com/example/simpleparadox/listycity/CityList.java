@@ -21,7 +21,10 @@ public class CityList {
         }
         cities.add(city);
     }
-
+    public String  getFirstCityName() {
+        City firstCity = cities.get(0);
+        return firstCity.getCityName();
+    }
     /**
      * This returns a sorted list of cities
      * @return
